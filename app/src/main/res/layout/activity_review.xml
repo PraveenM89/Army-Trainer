@@ -1,0 +1,121 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#fff"
+    tools:context="com.armytrainer.anish.armytrainer.ReviewActivity">
+
+
+    <TextView
+        android:text="TEST RESULT"
+        android:textSize="20dp"
+        android:textColor="#F00"
+        android:textStyle="bold"
+        android:id="@+id/text_test_over_caption"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TableLayout
+        android:layout_marginLeft="100px"
+        android:layout_marginRight="100px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow android:layout_width="wrap_content"
+            android:layout_margin="10px"
+            android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textColor="#000"
+                android:text="SCORE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textColor="#000"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:id="@+id/text_result_score"
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_margin="10px"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textColor="#000"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="TIME ELAPSED"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/text_time_elapsed"
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:gravity="center_horizontal"
+                    android:text=" seconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="75px"
+        android:layout_marginRight="75px"
+        android:layout_marginBottom="50px"
+        android:layout_marginTop="150px"
+        android:id="@+id/button_view_answers"
+        android:text="VIEW ANSWERS"
+        android:textColor="#fff"
+        android:background="#55f"
+        android:layout_height="75px" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="75px"
+        android:layout_marginRight="75px"
+        android:id="@+id/button_retake"
+        android:text="BEGIN A NEW TEST"
+        android:textColor="#fff"
+        android:background="#55f"
+        android:layout_height="75px" />
+
+</LinearLayout>

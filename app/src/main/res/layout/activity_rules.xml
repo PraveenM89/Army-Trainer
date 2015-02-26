@@ -1,0 +1,57 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="50px"
+    android:paddingRight="50px"
+    android:background="#fff"
+    android:paddingTop="100px"
+    android:paddingBottom="50px"
+    android:orientation="vertical"
+    tools:context="com.armytrainer.anish.armytrainer.RulesActivity">
+
+    <TextView
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="30px"
+        android:text="POINTS TO NOTE"
+        android:background="#f00"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:textSize="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30px"
+        android:layout_height="wrap_content"
+        android:layout_weight="50">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/rules"
+            android:textColor="#000"
+            android:textStyle="italic"
+            android:textSize="14dp"
+            android:id="@+id/text_rules"
+            />
+
+        </ScrollView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="BEGIN"
+        android:id="@+id/button_begin"
+        android:background="@drawable/gradient_button"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:padding="0dp"
+        android:layout_marginLeft="100px"
+        android:layout_marginRight="100px"
+        android:layout_marginBottom="50px"/>
+
+</LinearLayout>
