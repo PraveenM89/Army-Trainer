@@ -15,6 +15,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 
 public class QuizActivity extends ActionBarActivity {
 
@@ -104,7 +106,8 @@ public class QuizActivity extends ActionBarActivity {
             }
         });
 
-        temp_curr_index = curr_qno =  ((int)(Math.random()*qBank.length))%qBank.length;
+        Random rd = new Random();
+        temp_curr_index = curr_qno =  rd.nextInt(15);
         score = 0;
         count = 1;
         updateText();

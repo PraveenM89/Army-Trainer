@@ -22,10 +22,7 @@ public class Question {
         this.qAnswer = qAnswer;
     }
 
-    @Override
-    public String toString() {
-        return  "Question "+qno+"\n"+"  "+ qText + "\n" +"  ANSWER : "+ qAnswer+"\n";
-    }
+
 
     public void setQno(int qno) {
         this.qno = qno;
