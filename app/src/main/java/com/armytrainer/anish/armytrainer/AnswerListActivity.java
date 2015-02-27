@@ -100,7 +100,7 @@ class MyListAdapter extends BaseAdapter{
             LayoutInflater inf = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inf.inflate(R.layout.single_row, parent,false);
         }
-        ((TextView) row.findViewById(R.id.final_qno)).setText("Q-No "+ position);
+        ((TextView) row.findViewById(R.id.final_qno)).setText("Q-No "+ String.valueOf(position+1));
         ((TextView) row.findViewById(R.id.final_qtext)).setText(f_qbank.get(position).getqText());
         ((TextView) row.findViewById(R.id.final_qans)).setText(f_qbank.get(position).getqAnswer());
 
