@@ -32,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
         button_take_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent j = new Intent(MainActivity.this, RulesActivity.class);
+                Intent j = new Intent(MainActivity.this, LoginActivity.class);
                 //i.putExtra("cheat_answer",dataarr[curr_index].getmBoolean());
                 startActivityForResult(j,1);
             }

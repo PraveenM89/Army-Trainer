@@ -19,6 +19,8 @@
             <li>The answers can be reviewed at the end of the test.</li>
         </ol>
     </string>
+    <string name="facebook_app_id">1545362515737768</string>
     <string name="title_activity_review">ReviewActivity</string>
     <string name="title_activity_answer_list">AnswerListActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>
