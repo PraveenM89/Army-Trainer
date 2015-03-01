@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 public class LoginActivity extends FragmentActivity {
@@ -17,7 +18,25 @@ public class LoginActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+
+        //setContentView(R.layout.activity_login);
+        if (savedInstanceState == null) {
+            // Add the fragment on initial activity setup
+            mainFragment = new FacebookFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(android.R.id.content, mainFragment)
+                    .commit();
+
+
+        } else {
+            // Or set the fragment from restored state info
+            mainFragment = (FacebookFragment) getSupportFragmentManager()
+                    .findFragmentById(android.R.id.content);
+        }
 
     }
+
+
+
 }

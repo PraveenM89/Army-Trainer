@@ -14,6 +14,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.facebook.Session;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,7 +50,11 @@ public class AnswerListActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_answer_list, menu);
+        Session s = Session.getActiveSession();
+        String t = s != null ? s.getAccessToken() : null;
+        if(t == null || t.isEmpty())
+            return  false;
+        getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
     }
 
@@ -61,8 +67,9 @@ public class AnswerListActivity extends ActionBarActivity {
 
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_logout_fb) {
+            Fblogout fb = new Fblogout();
+            fb.logofff(AnswerListActivity.this);
         }
 
         return super.onOptionsItemSelected(item);

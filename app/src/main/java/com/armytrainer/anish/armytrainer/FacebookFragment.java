@@ -1,5 +1,6 @@
 package com.armytrainer.anish.armytrainer;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.facebook.Session;
 import com.facebook.SessionState;
@@ -20,10 +22,23 @@ import com.facebook.widget.LoginButton;
 public class FacebookFragment extends Fragment {
     private UiLifecycleHelper uiHelper;
     private static final String TAG = "FacebookFragment";
+    private View v;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fb_login, container, false);
+        v = view;
         LoginButton authButton = (LoginButton) view.findViewById(R.id.authButton);
+
+        ((Button)view.findViewById(R.id.skip_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(),RulesActivity.class);
+                startActivity(i);
+                getActivity().finish();
+
+            }
+        });
+
         authButton.setFragment(this);
         return view;
     }
@@ -32,15 +47,19 @@ public class FacebookFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         uiHelper = new UiLifecycleHelper(getActivity(), callback);
+
         uiHelper.onCreate(savedInstanceState);
     }
 
     private void onSessionStateChange(Session session, SessionState state, Exception exception) {
         if (state.isOpened()) {
             Log.i(TAG, "Logged in...");
+            //((Button)(v.findViewById(R.id.skip_button))).setVisibility(View.INVISIBLE);
             Intent ij = new Intent(getActivity(),RulesActivity.class);
             startActivityForResult(ij,1);
+            getActivity().finish();
         } else if (state.isClosed()) {
+
             Log.i(TAG, "Logged out...");
         }
     }

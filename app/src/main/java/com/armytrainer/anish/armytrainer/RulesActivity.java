@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.facebook.Session;
+
 
 public class RulesActivity extends ActionBarActivity {
 
@@ -36,8 +38,18 @@ public class RulesActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_rules, menu);
+        Session s = Session.getActiveSession();
+        String t = s != null ? s.getAccessToken() : null;
+        if(t == null || t.isEmpty())
+           return  false;
+
+        getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     @Override
@@ -48,8 +60,9 @@ public class RulesActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_logout_fb) {
+            Fblogout fb = new Fblogout();
+            fb.logofff(RulesActivity.this);
         }
 
         return super.onOptionsItemSelected(item);

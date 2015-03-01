@@ -30,6 +30,7 @@
         <activity
             android:name=".RulesActivity"
             android:label="@string/title_activity_rules"
+
             android:screenOrientation="portrait" >
         </activity>
         <activity

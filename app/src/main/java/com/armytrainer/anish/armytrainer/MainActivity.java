@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.facebook.Session;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -44,7 +46,11 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        Session s = Session.getActiveSession();
+        String t = s != null ? s.getAccessToken() : null;
+        if(t == null || t.isEmpty())
+            return  false;
+        getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
     }
 
@@ -56,8 +62,9 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_logout_fb) {
+            Fblogout fb = new Fblogout();
+            fb.logofff(MainActivity.this);
         }
 
         return super.onOptionsItemSelected(item);
